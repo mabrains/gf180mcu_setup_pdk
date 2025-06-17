@@ -1,0 +1,5 @@
+## Here is a list of python packages required
+
+docopt
+gdsfactory
+klayout
