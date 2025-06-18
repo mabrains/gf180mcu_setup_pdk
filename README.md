@@ -118,6 +118,15 @@ Example:
 klayout_gf180mcu test_example/nfet_03v3.gds
 ```
 
+You will observe that the PDK has been added to KLayout, as illustrated in Figure 1.
+
+<p align="center">
+  <img src="images/pdk_klayout.png" width="200%" >
+</p>
+<p align="center">
+  Fig. 1. Klayout GF180MCU-PDK Loaded
+</p>
+
 ## About Mabrains
 
 Mabrains was founded to achieve the main purpose to change the world of Chip Design using AI. Empowering the world with a new methodologies and techniques that would disrupt the status quo in the EDA industry.
