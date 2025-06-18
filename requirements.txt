@@ -1,5 +1,5 @@
 ## Here is a list of python packages required
 
 docopt
-gdsfactory
+gdsfactory==7.9.4
 klayout

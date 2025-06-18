@@ -75,7 +75,7 @@ def klayout_env_setup(klayout_home: str, python_env: str):
     python_lib = python_libs[0]
 
     alias = (
-        f"alias klayout_gf180mcu='KLAYOUT_HOME={klayout_home} "
+        f"alias klayout_gf180mcu='KLAYOUT_PATH={klayout_home}:{klayout_home}/tech "
         f"KLAYOUT_PYTHONPATH={python_lib} klayout -e'"
     )
     add_line_to_rc(alias)

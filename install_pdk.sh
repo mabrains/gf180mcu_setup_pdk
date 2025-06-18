@@ -28,28 +28,25 @@ fi
 
 PDK_ROOT=$(realpath "$PDK_ROOT")
 
-# Set default values
-PDK="gf180mcu"
-
-# Check for ciel
-if ! command -v ciel &> /dev/null; then
-  echo "📦 Installing ciel..."
-  python3 -m pip install --user --upgrade ciel
+# Check for volare
+if ! command -v volare &> /dev/null; then
+  echo "📦 Installing volare..."
+  python3 -m pip install --user --upgrade volare
 fi
 
-# Confirm ciel is installed
-if ! command -v ciel &> /dev/null; then
-  echo "❌ ciel installation failed or not in PATH"
+# Confirm volare is installed
+if ! command -v volare &> /dev/null; then
+  echo "❌ volare installation failed or not in PATH"
   exit 1
 fi
 
-echo "🔍 Fetching latest hash for $PDK..."
-LATEST_HASH=$(ciel ls-remote --pdk-family "$PDK" | awk 'NR==2 {print $1}')
+echo "🔍 Fetching latest hash for gf180mcu ..."
+LATEST_HASH=$(volare ls-remote --pdk gf180mcu | awk 'NR==1 {print $1}')
 
 if [ -z "$LATEST_HASH" ]; then
-  echo "❌ Could not get latest hash for $PDK"
+  echo "❌ Could not get latest hash for gf180mcu"
   exit 1
 fi
 
-echo "📥 Enabling $PDK ($LATEST_HASH)..."
-ciel enable --pdk-family "$PDK" "$LATEST_HASH"
+echo "📥 Enabling gf180mcu ($LATEST_HASH)..."
+volare enable --pdk gf180mcu $LATEST_HASH
